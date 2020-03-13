@@ -23,15 +23,20 @@ Array.prototype.isSubsetOf = function (arr) {
     // your code here
 };
 
-//   i will just start with a function isSub  to figure out the logic 
- function isSub(array1, array2){
-
-    for ( var i = 0; i <array1.length; i++){
-        for (var j = 0; j < array2.length; j++){
-            if(array2[i] === array1[j]){
-                return true;
-            }
-        }
-    }
-
-}
+//   i will just start with a function isSub  for simple array  
+// function isSub(array1, array2){
+     
+//      for (var j = 0; j < array1.length; j++){
+//          var test = false;
+//           for (var i = 0; i < array2.length; i++){
+//          if(array2[i]===array1[j]){
+//              test = true
+//          }
+//       }
+//      }
+      
+//       return test;
+    
+        
+//     }
+    
