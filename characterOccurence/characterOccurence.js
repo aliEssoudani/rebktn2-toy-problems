@@ -10,7 +10,7 @@
 
  // input   =  aaaaaaaaaaaa
  // result  =  123456789101112
-<<<<<<< HEAD
+ HEAD
  
  // not finished 
 //  function toy1(text){
@@ -32,9 +32,8 @@
 // }
 
   
-=======
 
 
 
- 
->>>>>>> 8b2322f64f8f3bd6a03885315c81ee9cadbe4dac
+
+
