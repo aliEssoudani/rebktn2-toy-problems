@@ -31,8 +31,43 @@
 */
 
 // Feel free to add helper functions if needed.
+// i used two ways to sort the array ,bubbleSort nd bubbleSort1
+// using two loops , means n square complexity
+var bubbleSort = function(array){
+  
+    // Your code here.
+    var j =0;
+    while(j < array.length){
+      var temp;
+    for(var i = 0; i < array.length; i++){
+        if(array[i] > array[i+1]){
+          temp=array[i]
+          array[i]=array[i+1]
+          array[i+1]=temp;
+        }
+      }
+      j++
+    };
+    return array;
 
+}
 
-var bubbleSort = function(array) {
+var bubbleSort1 = function(array) {
   // Your code here.
+  var result=[];
+  // we need two loops : find the min everytime and update the input array by deleting it and iterate again
+	while(array.length >0){
+    var min = array[0], id = 0;
+    // we will loop to find the min in our array , using two temporary value the min and the id 
+	for(var i = 0; i < array.length; i++){
+			if(array[i] < min){
+				id = i;
+				min = array[i];
+			}
+    }
+    // we will push the min to the result array and edit our array by deleting that value using splice ,so at the second iteration with while loop we will work with a new array
+		result.push(min);
+		array.splice(id, 1);
+	};
+	return result;
 };
