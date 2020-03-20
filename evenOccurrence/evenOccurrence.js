@@ -7,3 +7,35 @@ evenOccurrence([ "cat", "dog", "dig", "cat" ]) // "cat"
 evenOccurrence([[1,2,3], [1,2], [1,2,3]]) // [1,2,3]
 evenOccurrence([{a: 1, b: 2}, {a:1, b:3}, {a:1, b:2}]) // {a:1, b:2}
 */
+var evenOccurrence = function(array) {
+    // TODO: your solution here
+    //  we will count the number of occurance of every element in the array and save the result in an object 
+    var occurance = {};
+  for(var i  = 0; i < array.length; i++){
+      if(typeof(array[i]) ==="number" || typeof(array[i]) ==="string" || Array.isArray(array[i])){
+        if(occurance[array[i]]){
+            occurance[array[i]]++;
+          }else{
+            occurance[array[i]]=1}
+      }else if(!Array.isArray(array[i])){
+        //   we should use JSON.stringify so we can compare two object and cover the nested object part
+         var x= JSON.stringify(array[i]);
+          if(occurance[x]){
+            occurance[x]++;
+          }else{
+            occurance[x]=1}
+      }
+      
+      
+  }
+  // console.log(occurance)
+
+for (var key in occurance){
+    if(occurance[key] %2 ===0){
+      return key
+    }
+  }
+ 
+   return "doesn't exist"
+  
+  };
