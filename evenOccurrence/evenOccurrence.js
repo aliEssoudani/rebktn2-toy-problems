@@ -29,7 +29,15 @@ var evenOccurrence = function(array) {
       
   }
   // console.log(occurance)
+//   not finished we should use the same process using while we create the occurance object , we should discuss about the 
+// current if it's an object or no ,
+//   for (var i = 0; i < array.length; i++) {
+//     var current = array[i];
 
+//     if (occurance[current] % 2 === 0) {
+//       return current;
+//     }
+//   }
 for (var key in occurance){
     if(occurance[key] %2 ===0){
       return key

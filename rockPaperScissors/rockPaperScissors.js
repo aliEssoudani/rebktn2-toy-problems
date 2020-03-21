@@ -18,7 +18,23 @@
 *
 */
 
-var rockPaperScissors = function (
-) {
+var rockPaperScissors = function () {
+
   // TODO: your solution here
+  var result = [];
+  var throwP = ["R","P","S"];
+  // we need 3 loops to cover all the possible cases , because we already know they are 3 rounds 
+  for(var i = 0; i < throwP.length; i++){
+    for(var j = 0;j < throwP.length;j++){
+      for(var k = 0;k < throwP.length;k++){
+        var str ="";
+        str = throwP[i]+throwP[j]+throwP[k];
+        result.push(str);
+      }
+    }
+  }
+  return result;
 };
+// to make this function work for n rounds we should make the for loop n times 
+  // we will need to use recursion.
+    // we will decrease the round number for each invokation of the recursive function  = == to increase the number of played round.
