@@ -34,8 +34,21 @@ var Tree = function(value) {
   this.value = value;
   this.children = [];
 };
-
+//  it's not working properly , the result is an array of arrays :/
 Tree.prototype.DFSelect = function(filter) {
+  // we should keep track of the depth 
+  var count = 0;
+  var result = [];
+  // this excution is for the root ;firts node of the tree 
+  if (filter(this.value, count)){
+    result.push(this.value);
+  }
+  // we will increase the depth and use recursion for every children and see if it valid the condition or not 
+  count++;
+  for (var i = 0 ; i < this.children.length; i++){
+    result.push(this.children[i].DFSelect(filter, count));
+  }
+  return result;
 };
 
 
