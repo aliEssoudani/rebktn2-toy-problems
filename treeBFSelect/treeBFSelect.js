@@ -36,9 +36,29 @@ var Tree = function(value) {
 };
 
 
-
-Tree.prototype.BFSelect = function(filter) {
+//  not finished ,well did not get how to pass after looping throught the first children :/
+Tree.prototype.BFSelect = function(filter, depth=0) {
   // return an array of values for which the function filter(value, depth) returns true
+  var result = [];
+  // var depth = 0
+  // checking the root 
+  if(filter(this.value, 0)){
+    result.push(this.value)
+  }
+  if(this.children.length > 0){
+    var newDepth = depth + 1;
+    var i = this.children.length
+    while(i--){
+      //just to test if we are looping throught the children  of node first
+      result.push(this.children[i].value)
+      // this.children[i].BFSelect(filter, newDepth)
+    }
+    
+
+  }
+  
+  return result;
+  
 };
 
 /**
