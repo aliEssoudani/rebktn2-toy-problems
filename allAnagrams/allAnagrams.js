@@ -14,4 +14,21 @@
 
 var allAnagrams = function(string) {
   // Your code here.
+  if(string.length < 2){
+    return [string];
+  }else{
+    var result = [];
+    for(var i = 0; i < string.length; i++){
+      var stringArr = string.split("");
+      var tempo =  stringArr[i];
+      delete stringArr[i];
+      var restStr = allAnagrams(stringArr.join(""));
+          // console.log(restStr)
+      for(var j = 0; j < restStr.length; j++){
+        result.push(tempo + restStr[j]);
+        //console.log(result)
+      }
+    }
+    return result;
+  }
 };
