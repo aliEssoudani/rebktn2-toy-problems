@@ -38,17 +38,52 @@
  * evenNumbers.includes(2) should be true, evenNumbers.includes(3) should be false
  */
 
-
-var Range = function(start, end, step) {
+//  not working for negative steps :/
+var Range = function(start, end, step = 1) {
+    this.start = start;
+    
+    if (end === undefined) {
+      this.end = start;
+    } else {
+      this.end = end;
+    }
+  
+    if(this.start < this.end){
+       this.step = step  
+    }else{
+    this.step = -step
+      }
+      
+    
+    
+    this.rangeStorage = {};
+  
+    if (this.step > 0) {
+      for (let i = this.start; i <= this.end; i += this.step) {
+        this.rangeStorage[i] = "done";
+      }
+    } else {
+      for (let i = this.start; i >= this.end; i += this.step) {
+        this.rangeStorage[i] = "done";
+      }
+    }
 };
+  
 
 Range.prototype.size = function () {
+    return Object.keys(this.rangeStorage).length;
+
 };
 
 Range.prototype.each = function (callback) {
 };
 
 Range.prototype.includes = function (val) {
+    if(this.rangeStorage[val]){
+        return true
+    }else{
+        return false;
+    }
 };
 
 var range = new Range(1);
