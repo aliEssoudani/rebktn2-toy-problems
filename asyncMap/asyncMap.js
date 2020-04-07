@@ -36,7 +36,12 @@
  *
  *
  */
-
-
+// not finished :/  
 var asyncMap = function(tasks, callback) {
-};
+ 
+    for (let i = 0; i < tasks.length; i++) {
+       let currentFunc = tasks[i];
+      currentFunc(callback);
+    }
+   }
+
