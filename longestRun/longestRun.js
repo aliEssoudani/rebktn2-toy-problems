@@ -13,9 +13,6 @@ longestRun("abcdefgh") // [ 0, 0 ]
 longestRun("abccccccc") // [ 2, 8 ]
 */
 
-var longestRun = function(string) {
-
-}
 
 
 var longestRun = function (string) {

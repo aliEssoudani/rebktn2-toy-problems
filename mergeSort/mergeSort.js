@@ -70,6 +70,38 @@ Array.prototype.sort = function() {
   console.log("please don't use the native sort function!");
 };
 
-function mergeSort(arr) {
-  // your code here...
-}
+// not finished
+
+// function mergeSort(arr) {
+//   // your code here...
+//      var middle = Math.floor(arr.length/2)
+                       
+//      var left = arr.slice(0, middle) ;    
+                       
+//      var right = arr.slice(middle);                     
+//   if (arr.length < 2) {
+//     return arr
+//   }
+
+// var merge = function(array1, array2) {
+//   let result = [],
+//       i = 0,
+//       j = 0
+
+//   while(i < array1.length && j < array2.length) {
+    
+//     if(array1[i] < array2[j]) {
+//       result.push(array1[i])       
+//     } else {                       
+//       result.push(array2[j])
+//     }
+//     i++;
+//     j++;
+//   }
+
+  
+
+// }
+//   return merge(mergeSort(left), mergeSort(right))
+
+// }
