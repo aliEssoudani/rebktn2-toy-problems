@@ -15,3 +15,17 @@
 //  [ ] ==>	0
 //  array:
 //  [ [ [ ] ] ] ==>	0
+
+
+function arrayception (array, depth = 0) {
+    let found = 0;
+    array.forEach(item => {
+      if (!Array.isArray(item)) {
+        found = Math.max(found, depth + 1)
+      } else {
+        found = Math.max(found, arrayception(item, depth + 1))
+      }
+    })
+      
+    return found;
+}

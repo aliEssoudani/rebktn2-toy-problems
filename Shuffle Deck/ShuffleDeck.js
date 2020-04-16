@@ -33,3 +33,23 @@ var orderedDeck = function () {
   });
   return deck;
 };
+
+
+var shuffleDeck = function(deck) {
+  var shuffled = [];
+  var randomIndex = {};
+  var randomIndexGen = function () {
+    var randomIdx = Math.floor(Math.random() * deck.length);
+    if(randomIndex[randomIdx] !== undefined) {
+      randomIndex[randomIdx] = randomIdx;
+      return randomIdx;
+    } else {
+      return randomIndexGen();
+    }
+  };
+  for (var i = 0; i < deck.length; i++) {
+    var uniqueRandomIdx = randomIndexGen();
+    shuffled.push( deck[uniqueRandomIdx] );
+  }
+  return shuffled;
+};
