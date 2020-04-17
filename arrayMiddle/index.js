@@ -7,6 +7,14 @@ If the array has an even number of elements, return the average of the two middl
 
 function middle(numbers) {
   // your code here...
+  if((numbers.length % 2) !==0 ){
+    var mid = Math.floor(numbers.length / 2);
+    return numbers[mid]
+  }else{
+    var mid = Math.floor(numbers.length / 2);
+    return ((numbers[mid]+numbers[mid-1])/2) 
+  }
+  
 }
 
 // DO NOT EDIT BELOW THIS LINE
