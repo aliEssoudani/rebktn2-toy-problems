@@ -32,9 +32,38 @@ var Tree = function(value) {
   this.children = [];
 };
 
-Tree.prototype.countLeaves = function() {
-  // your code here...
-};
+Tree.prototype.countLeaves = function () {
+  var numLeaves = 0;
+  
+  if (this.children.length === 0) {
+    numLeaves++;
+  }
+
+  for (var i = 0; i < this.children.length; i++) {
+    numLeaves += this.children[i].countLeaves();
+  }
+
+  return numLeaves;
+  // let counter = 0;
+  
+  // if(!this.children.length) {
+  //   return 1;
+  // }
+  
+  // function childCounter(childArray) {
+  //   for(var i = 0; i < childArray.length; i++) {
+  //     let current = childArray[i]
+  //     if(!current.children.length) {
+  //       counter++
+  //     } else {
+  //       childCounter(current.children)
+  //     }
+  //   }
+  // }
+  // childCounter(this.children)
+  // return counter;
+}
+
 
 /**
  * You shouldn't need to change anything below here, but feel free to look.
