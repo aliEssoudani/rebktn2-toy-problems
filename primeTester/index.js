@@ -15,6 +15,30 @@ The tests are looking at the efficiency of your solution (number of operations) 
 
 function primeTester(num) {
   // your code here...
+  var devider = 0;
+  switch(num){
+    case 1 :
+      return false;
+      break;
+    case 2 :
+      return true;
+      break;
+      
+  }
+  for (let i = 2; i <= num; i++) {
+    if(num % i === 0){
+      devider++
+    }
+    if(devider>1){
+      break;
+    }
+    
+  }
+  if(devider > 1){
+    return false
+  }else{
+   return true
+  }
 }
 
 // DO NOT EDIT BELOW THIS LINE
