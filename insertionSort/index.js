@@ -33,9 +33,55 @@ Array.prototype.sort = function() {
 };
 
 function insertionSort(array) {
-  // your code here...
+  for(var i = 0; i < array.length; i++) {
+    var temp = array[i];
+    var j = i - 1;
+    while (j >= 0 && array[j].value > temp.value) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = temp;
+  }
+  return array;
 }
 
-// DO NOT EDIT BELOW THIS LINE
+/* function insertionSort(arr){
+debugger;
+    for(let i = 1; i < arr.length; i++){
+        let j = i;
+        while(arr[j-1] > arr[j] && j > 0){
+            let temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+            j--;
+        }
+    }
+    return arr;
+}  
+DO NOT EDIT BELOW THIS LINE
+// function insertionSort (array) {
+//   // define result array equal to copy of given arr
+//   // define var temp
+//   // iterate through given arr
+//     // iterate through the given arr
+//       // if the item's value is greater than the next item
+//         // set temp equal item
+//         // set item to next item
+//         // set next item to temp
+//   // return the resultarr
+  
+//   var resultArr = array.slice();
+//   var temp;
+//   for (var i = 0; i < resultArr.length; i++) {
+//     for (var j = 0; j < resultArr.length - 1; j++ ) {
+//       if (resultArr[j].value > resultArr[j + 1].value) {
+//         temp = resultArr[j];
+//         resultArr[j] = resultArr[j + 1];
+//         resultArr[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return resultArr;
+// }*/
 
 module.exports = insertionSort;
